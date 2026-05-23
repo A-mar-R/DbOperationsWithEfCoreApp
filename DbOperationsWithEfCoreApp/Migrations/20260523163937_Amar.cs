@@ -5,18 +5,11 @@
 namespace DbOperationsWithEfCoreApp.Migrations
 {
     /// <inheritdoc />
-    public partial class addedLanguageTable : Migration
+    public partial class Amar : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "LanguageId",
-                table: "Books",
-                type: "int",
-                nullable: false,
-                defaultValue: 0);
-
             migrationBuilder.CreateTable(
                 name: "Languages",
                 columns: table => new
@@ -57,10 +50,6 @@ namespace DbOperationsWithEfCoreApp.Migrations
 
             migrationBuilder.DropIndex(
                 name: "IX_Books_LanguageId",
-                table: "Books");
-
-            migrationBuilder.DropColumn(
-                name: "LanguageId",
                 table: "Books");
         }
     }

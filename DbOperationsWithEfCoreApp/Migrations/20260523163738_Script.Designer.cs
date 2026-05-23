@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DbOperationsWithEfCoreApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260523160108_InitDb")]
-    partial class InitDb
+    [Migration("20260523163738_Script")]
+    partial class Script
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,9 @@ namespace DbOperationsWithEfCoreApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Country")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -42,6 +45,9 @@ namespace DbOperationsWithEfCoreApp.Migrations
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
 
                     b.Property<int>("NoOfPages")
                         .HasColumnType("int");

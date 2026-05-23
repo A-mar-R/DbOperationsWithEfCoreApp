@@ -9,6 +9,7 @@
         public bool IsActive {  get; set; }
         public DateTime CreatedOn { get; set; }
         public int LanguageId { get; set; }
+        public int Country { get; set; }
         public Language Language { get; set; }
     }
 }
